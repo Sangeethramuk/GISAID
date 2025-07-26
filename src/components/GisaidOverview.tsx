@@ -72,8 +72,8 @@ const GisaidOverview: React.FC = () => {
               }}>
                 {/* Logo Image */}
                 <Box sx={{
-                  width: 40,
-                  height: 40,
+                  width: 60,
+                  height: 60,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -99,8 +99,8 @@ const GisaidOverview: React.FC = () => {
                   
                   {/* Fallback Logo (current design) */}
                   <Box sx={{
-                    width: 36,
-                    height: 36,
+                    width: 56,
+                    height: 56,
                     bgcolor: '#2b7fff',
                     borderRadius: 1.5,
                     display: 'none', // Hidden by default, shows if image fails
@@ -108,23 +108,23 @@ const GisaidOverview: React.FC = () => {
                     justifyContent: 'center',
                     color: 'white',
                     fontWeight: 'bold',
-                    fontSize: 18,
+                    fontSize: 24,
                     position: 'relative',
                     overflow: 'hidden'
                   }}>
                     {/* DNA Helix Representation */}
                     <Box sx={{
                       position: 'relative',
-                      width: 16,
-                      height: 16,
+                      width: 24,
+                      height: 24,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
                       <Box sx={{
                         position: 'absolute',
-                        width: 2,
-                        height: 12,
+                        width: 3,
+                        height: 18,
                         bgcolor: 'white',
                         borderRadius: 1,
                         left: '50%',
@@ -132,23 +132,23 @@ const GisaidOverview: React.FC = () => {
                         '&::before': {
                           content: '""',
                           position: 'absolute',
-                          width: 8,
-                          height: 2,
+                          width: 12,
+                          height: 3,
                           bgcolor: 'white',
                           borderRadius: 1,
-                          top: 2,
-                          left: -3,
+                          top: 3,
+                          left: -4.5,
                           transform: 'rotate(45deg)'
                         },
                         '&::after': {
                           content: '""',
                           position: 'absolute',
-                          width: 8,
-                          height: 2,
+                          width: 12,
+                          height: 3,
                           bgcolor: 'white',
                           borderRadius: 1,
-                          bottom: 2,
-                          right: -3,
+                          bottom: 3,
+                          right: -4.5,
                           transform: 'rotate(-45deg)'
                         }
                       }} />
