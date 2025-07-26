@@ -9,6 +9,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 /* Ensure full width for Material-UI containers */
@@ -47,6 +48,8 @@ body {
   padding: 0;
   width: 100vw;
   overflow-x: hidden;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -57,11 +60,13 @@ html {
 /* Custom button styles */
 .MuiButton-root {
   text-transform: none !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
 /* Custom card styles */
 .MuiCard-root {
   transition: box-shadow 0.2s ease-in-out;
+  border-radius: 8px !important;
 }
 
 .MuiCard-root:hover {
@@ -95,6 +100,7 @@ input:focus {
 /* Custom chip styles */
 .MuiChip-root {
   font-weight: 600 !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
 /* Custom icon button styles */
@@ -104,6 +110,16 @@ input:focus {
 
 .MuiIconButton-root:hover {
   background-color: rgba(43, 127, 255, 0.08) !important;
+}
+
+/* Enhanced spacing and layout */
+.MuiBox-root {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Paper component enhancements */
+.MuiPaper-root {
+  font-family: 'Inter', sans-serif !important;
 }
 
 /* Responsive adjustments */
@@ -118,4 +134,18 @@ input:focus {
   .MuiGrid-item {
     margin-bottom: 16px;
   }
+}
+
+/* Enhanced focus states */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #2b7fff !important;
+  outline-offset: 2px !important;
+}
+
+/* Better visual hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
 }

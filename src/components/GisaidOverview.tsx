@@ -78,7 +78,7 @@ const GisaidOverview: React.FC = () => {
                 GISAID
               </Box>
               
-              {/* Navigation Tabs */}
+              {/* Primary Navigation Tabs */}
               <Box sx={{ display: 'flex', gap: 2 }}>
                 <Button
                   variant="contained"
@@ -96,7 +96,7 @@ const GisaidOverview: React.FC = () => {
                     }
                   }}
                 >
-                  Overview
+                  EpiFlu™
                 </Button>
                 <Button
                   variant="text"
@@ -113,7 +113,7 @@ const GisaidOverview: React.FC = () => {
                     }
                   }}
                 >
-                  Sub Types
+                  EpiCov™
                 </Button>
                 <Button
                   variant="text"
@@ -130,7 +130,7 @@ const GisaidOverview: React.FC = () => {
                     }
                   }}
                 >
-                  Clade
+                  EpiRSV™
                 </Button>
                 <Button
                   variant="text"
@@ -147,7 +147,7 @@ const GisaidOverview: React.FC = () => {
                     }
                   }}
                 >
-                  Emerging Variants
+                  EpiPox™
                 </Button>
                 <Button
                   variant="text"
@@ -164,24 +164,7 @@ const GisaidOverview: React.FC = () => {
                     }
                   }}
                 >
-                  Watchlist
-                </Button>
-                <Button
-                  variant="text"
-                  sx={{
-                    color: '#717784',
-                    textTransform: 'none',
-                    fontSize: 14,
-                    fontWeight: 500,
-                    px: 2,
-                    py: 1,
-                    borderRadius: 1,
-                    '&:hover': {
-                      bgcolor: '#fcfcfd'
-                    }
-                  }}
-                >
-                  Simulation
+                  More
                 </Button>
               </Box>
             </Box>
@@ -248,6 +231,170 @@ const GisaidOverview: React.FC = () => {
         </Container>
       </Box>
 
+      {/* Secondary Navigation Bar */}
+      <Box sx={{ 
+        bgcolor: '#ffffff', 
+        borderBottom: '1px solid #e1e4ea',
+        position: 'sticky',
+        top: 64,
+        zIndex: 999,
+        width: '100%'
+      }}>
+        <Container maxWidth={false} sx={{ px: 5, width: '100%', maxWidth: '100%' }}>
+          <Box sx={{ 
+            display: 'flex', 
+            alignItems: 'center',
+            py: 1,
+            gap: 3
+          }}>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Monitor board
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Worksets
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Upload
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Batch Upload
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              CLI Upload
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Settings
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Analysis
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Community
+            </Button>
+            <Button
+              variant="text"
+              sx={{
+                color: '#525866',
+                textTransform: 'none',
+                fontSize: 14,
+                fontWeight: 500,
+                px: 2,
+                py: 1,
+                '&:hover': {
+                  bgcolor: '#f8f9fa'
+                }
+              }}
+            >
+              Help
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+
       {/* Main Content */}
       <Container maxWidth={false} sx={{ px: 5, py: 4, width: '100%', maxWidth: '100%' }}>
         {/* Page Header */}
@@ -255,20 +402,22 @@ const GisaidOverview: React.FC = () => {
           display: 'flex', 
           justifyContent: 'space-between', 
           alignItems: 'flex-start',
-          mb: 4
+          mb: 5
         }}>
           <Box>
-            <Typography variant="h4" sx={{ 
+            <Typography variant="h3" sx={{ 
               color: '#222530', 
-              fontWeight: 600,
-              mb: 1
+              fontWeight: 700,
+              mb: 2,
+              fontSize: '28px'
             }}>
               EpiFlu™ Overview
             </Typography>
             <Typography sx={{ 
               color: '#99a0ae', 
               fontSize: 16,
-              fontWeight: 500
+              fontWeight: 400,
+              lineHeight: 1.5
             }}>
               Explore recent trends, variant growth, and global influenza insights powered by real-time genomic data.
             </Typography>
@@ -285,10 +434,11 @@ const GisaidOverview: React.FC = () => {
                 fontSize: 14,
                 fontWeight: 600,
                 px: 3,
-                py: 1.5
+                py: 1.5,
+                borderRadius: 2
               }}
             >
-              Add Filters
+              + Add Filters
             </Button>
             <Button
               variant="outlined"
@@ -299,7 +449,8 @@ const GisaidOverview: React.FC = () => {
                 fontSize: 14,
                 fontWeight: 600,
                 px: 3,
-                py: 1.5
+                py: 1.5,
+                borderRadius: 2
               }}
             >
               View Comparison
@@ -313,6 +464,7 @@ const GisaidOverview: React.FC = () => {
                 fontWeight: 600,
                 px: 3,
                 py: 1.5,
+                borderRadius: 2,
                 '&:hover': {
                   bgcolor: '#0561e2'
                 }
@@ -324,7 +476,7 @@ const GisaidOverview: React.FC = () => {
         </Box>
 
         {/* Filters */}
-        <Box sx={{ display: 'flex', gap: 2, mb: 4 }}>
+        <Box sx={{ display: 'flex', gap: 2, mb: 5 }}>
           <Button
             variant="outlined"
             startIcon={<CalendarToday />}
@@ -336,7 +488,8 @@ const GisaidOverview: React.FC = () => {
               fontSize: 14,
               fontWeight: 500,
               px: 3,
-              py: 1.5
+              py: 1.5,
+              borderRadius: 2
             }}
           >
             Date Range
@@ -352,7 +505,8 @@ const GisaidOverview: React.FC = () => {
               fontSize: 14,
               fontWeight: 500,
               px: 3,
-              py: 1.5
+              py: 1.5,
+              borderRadius: 2
             }}
           >
             Region
@@ -368,7 +522,8 @@ const GisaidOverview: React.FC = () => {
               fontSize: 14,
               fontWeight: 500,
               px: 3,
-              py: 1.5
+              py: 1.5,
+              borderRadius: 2
             }}
           >
             Impact Filters
@@ -380,16 +535,16 @@ const GisaidOverview: React.FC = () => {
           bgcolor: '#fef2f2', 
           border: '1px solid #fecaca',
           borderRadius: 2,
-          p: 2,
-          mb: 4
+          p: 3,
+          mb: 5
         }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Box>
               <Typography sx={{ 
                 color: '#2b303b', 
-                fontSize: 14,
+                fontSize: 16,
                 fontWeight: 600,
-                mb: 0.5
+                mb: 1
               }}>
                 New Variant KP.3 detected in India
               </Typography>
@@ -401,19 +556,24 @@ const GisaidOverview: React.FC = () => {
                 Growth Rate: +63%, Spike Mutation: S477N
               </Typography>
             </Box>
-            <Button
-              sx={{
-                color: '#c10007',
-                textTransform: 'none',
-                fontSize: 14,
-                fontWeight: 600,
-                '&:hover': {
-                  bgcolor: 'transparent'
-                }
-              }}
-            >
-              View Variant
-            </Button>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+              <Button
+                sx={{
+                  color: '#c10007',
+                  textTransform: 'none',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  '&:hover': {
+                    bgcolor: 'transparent'
+                  }
+                }}
+              >
+                View Variant
+              </Button>
+              <IconButton size="small">
+                <Typography sx={{ fontSize: 18, fontWeight: 600 }}>×</Typography>
+              </IconButton>
+            </Box>
           </Box>
         </Paper>
 
@@ -489,36 +649,39 @@ const GisaidOverview: React.FC = () => {
           bgcolor: '#fcfcfd', 
           border: '1px solid #eceff3',
           borderRadius: 3,
-          p: 2,
-          mb: 4
+          p: 3,
+          mb: 5
         }}>
           <Typography sx={{ 
             color: '#99a0ae', 
             fontSize: 14,
             fontWeight: 600,
-            mb: 2
+            mb: 3
           }}>
             Recent Highlights / Summary Section
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <Typography sx={{ 
               color: '#525866', 
               fontSize: 14,
-              fontWeight: 500
+              fontWeight: 500,
+              lineHeight: 1.6
             }}>
-              • <strong>New Variant Alert:</strong> "Clade 6B.1A.5a.2a + HA_S477N detected in India, showing 15% growth in prevalence over the last week.
+              • <strong>New Variant Alert:</strong> "Clade 6B.1A.5a.2a + HA_S477N detected in India, showing 15% growth in prevalence over the last week."
             </Typography>
             <Typography sx={{ 
               color: '#525866', 
               fontSize: 14,
-              fontWeight: 500
+              fontWeight: 500,
+              lineHeight: 1.6
             }}>
               • <strong>Regional Spike:</strong> "Significant increase in H3N2 cases observed in North America (Last 14 Days)."
             </Typography>
             <Typography sx={{ 
               color: '#525866', 
               fontSize: 14,
-              fontWeight: 500
+              fontWeight: 500,
+              lineHeight: 1.6
             }}>
               • <strong>Comparative Insight:</strong> "B/Victoria lineage is currently outpacing B/Yamagata globally, accounting for 70% of B-type submissions."
             </Typography>
@@ -526,14 +689,15 @@ const GisaidOverview: React.FC = () => {
         </Paper>
 
         {/* Key Metrics */}
-        <Box sx={{ display: 'flex', gap: 3, mb: 4 }}>
+        <Box sx={{ display: 'flex', gap: 3, mb: 5 }}>
           <Box sx={{ flex: 1 }}>
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)'
+              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              height: '100%'
             }}>
-              <CardContent sx={{ p: 2 }}>
+              <CardContent sx={{ p: 3 }}>
                 <Typography sx={{ 
                   color: '#99a0ae', 
                   fontSize: 14,
@@ -545,8 +709,8 @@ const GisaidOverview: React.FC = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
                   <Typography sx={{ 
                     color: '#222530', 
-                    fontSize: 20,
-                    fontWeight: 600
+                    fontSize: 24,
+                    fontWeight: 700
                   }}>
                     12,458,901
                   </Typography>
@@ -577,9 +741,10 @@ const GisaidOverview: React.FC = () => {
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)'
+              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              height: '100%'
             }}>
-              <CardContent sx={{ p: 2 }}>
+              <CardContent sx={{ p: 3 }}>
                 <Typography sx={{ 
                   color: '#99a0ae', 
                   fontSize: 14,
@@ -590,8 +755,8 @@ const GisaidOverview: React.FC = () => {
                 </Typography>
                 <Typography sx={{ 
                   color: '#222530', 
-                  fontSize: 20,
-                  fontWeight: 600,
+                  fontSize: 24,
+                  fontWeight: 700,
                   mb: 1
                 }}>
                   4
@@ -611,9 +776,10 @@ const GisaidOverview: React.FC = () => {
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)'
+              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              height: '100%'
             }}>
-              <CardContent sx={{ p: 2 }}>
+              <CardContent sx={{ p: 3 }}>
                 <Typography sx={{ 
                   color: '#99a0ae', 
                   fontSize: 14,
@@ -624,8 +790,8 @@ const GisaidOverview: React.FC = () => {
                 </Typography>
                 <Typography sx={{ 
                   color: '#222530', 
-                  fontSize: 20,
-                  fontWeight: 600,
+                  fontSize: 24,
+                  fontWeight: 700,
                   mb: 1
                 }}>
                   187
@@ -645,9 +811,10 @@ const GisaidOverview: React.FC = () => {
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)'
+              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              height: '100%'
             }}>
-              <CardContent sx={{ p: 2 }}>
+              <CardContent sx={{ p: 3 }}>
                 <Typography sx={{ 
                   color: '#99a0ae', 
                   fontSize: 14,
@@ -658,8 +825,8 @@ const GisaidOverview: React.FC = () => {
                 </Typography>
                 <Typography sx={{ 
                   color: '#222530', 
-                  fontSize: 20,
-                  fontWeight: 600,
+                  fontSize: 24,
+                  fontWeight: 700,
                   mb: 1
                 }}>
                   12
