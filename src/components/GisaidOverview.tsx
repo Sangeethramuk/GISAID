@@ -42,7 +42,9 @@ const GisaidOverview: React.FC = () => {
     <Box sx={{ 
       bgcolor: '#ffffff', 
       minHeight: '100vh',
-      fontFamily: 'Inter, sans-serif'
+      width: '100vw',
+      fontFamily: 'Inter, sans-serif',
+      overflowX: 'hidden'
     }}>
       {/* Header */}
       <Box sx={{ 
@@ -50,14 +52,16 @@ const GisaidOverview: React.FC = () => {
         borderBottom: '1px solid #eceff3',
         position: 'sticky',
         top: 0,
-        zIndex: 1000
+        zIndex: 1000,
+        width: '100%'
       }}>
-        <Container maxWidth={false} sx={{ px: 5 }}>
+        <Container maxWidth={false} sx={{ px: 5, width: '100%', maxWidth: '100%' }}>
           <Box sx={{ 
             display: 'flex', 
             justifyContent: 'space-between', 
             alignItems: 'center',
-            py: 1
+            py: 1,
+            width: '100%'
           }}>
             {/* Logo and Navigation */}
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
@@ -246,7 +250,7 @@ const GisaidOverview: React.FC = () => {
       </Box>
 
       {/* Main Content */}
-      <Container maxWidth={false} sx={{ px: 5, py: 4 }}>
+      <Container maxWidth={false} sx={{ px: 5, py: 4, width: '100%', maxWidth: '100%' }}>
         {/* Page Header */}
         <Box sx={{ 
           display: 'flex', 
