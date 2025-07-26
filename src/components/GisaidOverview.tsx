@@ -193,7 +193,9 @@ const GisaidOverview: React.FC = () => {
                     border: '1px solid #e1e4ea',
                     borderRadius: 8,
                     fontSize: 14,
-                    outline: 'none'
+                    outline: 'none',
+                    backgroundColor: '#ffffff',
+                    color: '#525866'
                   }}
                 />
               </Box>
