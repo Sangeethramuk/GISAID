@@ -155,30 +155,6 @@ const GisaidOverview: React.FC = () => {
                     </Box>
                   </Box>
                 </Box>
-                
-                {/* Logo Text */}
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                  <Typography sx={{
-                    color: '#222530',
-                    fontSize: 22,
-                    fontWeight: 700,
-                    fontFamily: 'Inter, sans-serif',
-                    letterSpacing: '-0.5px',
-                    lineHeight: 1
-                  }}>
-                    GISAID
-                  </Typography>
-                  <Typography sx={{
-                    color: '#99a0ae',
-                    fontSize: 10,
-                    fontWeight: 500,
-                    fontFamily: 'Inter, sans-serif',
-                    letterSpacing: '0.5px',
-                    textTransform: 'uppercase'
-                  }}>
-                    Intelligence Platform
-                  </Typography>
-                </Box>
               </Box>
               
               {/* Primary Navigation Tabs */}
