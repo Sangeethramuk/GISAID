@@ -21,6 +21,7 @@ import {
   TrendingUp
 } from '@mui/icons-material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import WorldMap from './WorldMap';
 
 // Mock data for the chart
 const chartData = [
@@ -694,7 +695,7 @@ const GisaidOverview: React.FC = () => {
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              boxShadow: 'none',
               height: '100%'
             }}>
               <CardContent sx={{ p: 3 }}>
@@ -741,7 +742,7 @@ const GisaidOverview: React.FC = () => {
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              boxShadow: 'none',
               height: '100%'
             }}>
               <CardContent sx={{ p: 3 }}>
@@ -776,7 +777,7 @@ const GisaidOverview: React.FC = () => {
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              boxShadow: 'none',
               height: '100%'
             }}>
               <CardContent sx={{ p: 3 }}>
@@ -811,7 +812,7 @@ const GisaidOverview: React.FC = () => {
             <Card sx={{ 
               border: '1px solid #e1e4ea',
               borderRadius: 2,
-              boxShadow: '0px 1px 1px 0px rgba(5,5,6,0.04)',
+              boxShadow: 'none',
               height: '100%'
             }}>
               <CardContent sx={{ p: 3 }}>
@@ -844,11 +845,11 @@ const GisaidOverview: React.FC = () => {
         </Box>
 
         {/* Chart Section */}
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: 5 }}>
           <Card sx={{ 
             border: '1px solid #e1e4ea',
             borderRadius: 2,
-            boxShadow: '0px 2px 1px 0px rgba(5,5,6,0.05)'
+            boxShadow: 'none'
           }}>
             <Box sx={{ 
               bgcolor: '#fcfcfd', 
@@ -1010,7 +1011,8 @@ const GisaidOverview: React.FC = () => {
             border: '1px solid #eceff3',
             borderRadius: 3,
             p: 2,
-            mt: 2
+            mt: 2,
+            boxShadow: 'none'
           }}>
             <Typography sx={{ 
               color: '#99a0ae', 
@@ -1058,7 +1060,7 @@ const GisaidOverview: React.FC = () => {
           <Card sx={{ 
             border: '1px solid #e1e4ea',
             borderRadius: 2,
-            boxShadow: '0px 2px 1px 0px rgba(5,5,6,0.05)',
+            boxShadow: 'none',
             mb: 2
           }}>
             <Box sx={{ 
@@ -1133,20 +1135,7 @@ const GisaidOverview: React.FC = () => {
             </Box>
             
             <Box sx={{ p: 2, height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Box sx={{
-                width: '100%',
-                height: '100%',
-                bgcolor: '#f8f9fa',
-                borderRadius: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '2px dashed #e1e4ea'
-              }}>
-                <Typography sx={{ color: '#99a0ae', fontSize: 16 }}>
-                  World Map Visualization
-                </Typography>
-              </Box>
+              <WorldMap />
             </Box>
           </Card>
 
@@ -1155,7 +1144,8 @@ const GisaidOverview: React.FC = () => {
             bgcolor: '#fcfcfd', 
             border: '1px solid #eceff3',
             borderRadius: 3,
-            p: 2
+            p: 2,
+            boxShadow: 'none'
           }}>
             <Typography sx={{ 
               color: '#99a0ae', 
