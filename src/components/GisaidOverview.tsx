@@ -7,7 +7,9 @@ import {
   Container,
   Chip,
   IconButton,
-  Paper
+  Paper,
+  Menu,
+  MenuItem
 } from '@mui/material';
 import {
   Search,
@@ -22,6 +24,7 @@ import {
 } from '@mui/icons-material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import WorldMap from './WorldMap';
+import React, { useState } from 'react';
 
 // Mock data for the chart
 const chartData = [
@@ -38,6 +41,115 @@ const chartData = [
 ];
 
 const GisaidOverview: React.FC = () => {
+  const [dateRangeAnchor, setDateRangeAnchor] = useState<null | HTMLElement>(null);
+  const [regionAnchor, setRegionAnchor] = useState<null | HTMLElement>(null);
+  const [impactFiltersAnchor, setImpactFiltersAnchor] = useState<null | HTMLElement>(null);
+  const [chartTop5Anchor, setChartTop5Anchor] = useState<null | HTMLElement>(null);
+  const [chartSubtypesAnchor, setChartSubtypesAnchor] = useState<null | HTMLElement>(null);
+  const [mapTop5Anchor, setMapTop5Anchor] = useState<null | HTMLElement>(null);
+  const [mapSubtypesAnchor, setMapSubtypesAnchor] = useState<null | HTMLElement>(null);
+
+  // Filter state values
+  const [selectedDateRange, setSelectedDateRange] = useState('Last 30 Days');
+  const [selectedRegion, setSelectedRegion] = useState('All Regions');
+  const [selectedImpactFilter, setSelectedImpactFilter] = useState('All Impacts');
+  const [selectedChartTop5, setSelectedChartTop5] = useState('Top 5 by Growth Rate');
+  const [selectedChartSubtypes, setSelectedChartSubtypes] = useState('All Subtypes');
+  const [selectedMapTop5, setSelectedMapTop5] = useState('Top 5 by Growth Rate');
+  const [selectedMapSubtypes, setSelectedMapSubtypes] = useState('All Subtypes');
+
+  const handleDateRangeClick = (event: React.MouseEvent<HTMLElement>) => {
+    setDateRangeAnchor(event.currentTarget);
+  };
+
+  const handleRegionClick = (event: React.MouseEvent<HTMLElement>) => {
+    setRegionAnchor(event.currentTarget);
+  };
+
+  const handleImpactFiltersClick = (event: React.MouseEvent<HTMLElement>) => {
+    setImpactFiltersAnchor(event.currentTarget);
+  };
+
+  const handleChartTop5Click = (event: React.MouseEvent<HTMLElement>) => {
+    setChartTop5Anchor(event.currentTarget);
+  };
+
+  const handleChartSubtypesClick = (event: React.MouseEvent<HTMLElement>) => {
+    setChartSubtypesAnchor(event.currentTarget);
+  };
+
+  const handleMapTop5Click = (event: React.MouseEvent<HTMLElement>) => {
+    setMapTop5Anchor(event.currentTarget);
+  };
+
+  const handleMapSubtypesClick = (event: React.MouseEvent<HTMLElement>) => {
+    setMapSubtypesAnchor(event.currentTarget);
+  };
+
+  const handleDateRangeClose = () => {
+    setDateRangeAnchor(null);
+  };
+
+  const handleRegionClose = () => {
+    setRegionAnchor(null);
+  };
+
+  const handleImpactFiltersClose = () => {
+    setImpactFiltersAnchor(null);
+  };
+
+  const handleChartTop5Close = () => {
+    setChartTop5Anchor(null);
+  };
+
+  const handleChartSubtypesClose = () => {
+    setChartSubtypesAnchor(null);
+  };
+
+  const handleMapTop5Close = () => {
+    setMapTop5Anchor(null);
+  };
+
+  const handleMapSubtypesClose = () => {
+    setMapSubtypesAnchor(null);
+  };
+
+  // Filter selection handlers
+  const handleDateRangeSelect = (value: string) => {
+    setSelectedDateRange(value);
+    setDateRangeAnchor(null);
+  };
+
+  const handleRegionSelect = (value: string) => {
+    setSelectedRegion(value);
+    setRegionAnchor(null);
+  };
+
+  const handleImpactFilterSelect = (value: string) => {
+    setSelectedImpactFilter(value);
+    setImpactFiltersAnchor(null);
+  };
+
+  const handleChartTop5Select = (value: string) => {
+    setSelectedChartTop5(value);
+    setChartTop5Anchor(null);
+  };
+
+  const handleChartSubtypesSelect = (value: string) => {
+    setSelectedChartSubtypes(value);
+    setChartSubtypesAnchor(null);
+  };
+
+  const handleMapTop5Select = (value: string) => {
+    setSelectedMapTop5(value);
+    setMapTop5Anchor(null);
+  };
+
+  const handleMapSubtypesSelect = (value: string) => {
+    setSelectedMapSubtypes(value);
+    setMapSubtypesAnchor(null);
+  };
+
   return (
     <Box sx={{ 
       bgcolor: '#ffffff', 
@@ -72,8 +184,8 @@ const GisaidOverview: React.FC = () => {
               }}>
                 {/* Logo Image */}
                 <Box sx={{
-                  width: 60,
-                  height: 60,
+                  width: 80,
+                  height: 80,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -572,8 +684,9 @@ const GisaidOverview: React.FC = () => {
               py: 1.5,
               borderRadius: 2
             }}
+            onClick={handleDateRangeClick}
           >
-            Date Range
+            {selectedDateRange}
           </Button>
           <Button
             variant="outlined"
@@ -589,8 +702,9 @@ const GisaidOverview: React.FC = () => {
               py: 1.5,
               borderRadius: 2
             }}
+            onClick={handleRegionClick}
           >
-            Region
+            {selectedRegion}
           </Button>
           <Button
             variant="outlined"
@@ -606,8 +720,9 @@ const GisaidOverview: React.FC = () => {
               py: 1.5,
               borderRadius: 2
             }}
+            onClick={handleImpactFiltersClick}
           >
-            Impact Filters
+            {selectedImpactFilter}
           </Button>
         </Box>
 
@@ -979,8 +1094,9 @@ const GisaidOverview: React.FC = () => {
                       px: 2,
                       py: 0.5
                     }}
+                    onClick={handleChartTop5Click}
                   >
-                    Top 5
+                    {selectedChartTop5}
                   </Button>
                   <Button
                     variant="outlined"
@@ -995,8 +1111,9 @@ const GisaidOverview: React.FC = () => {
                       px: 2,
                       py: 0.5
                     }}
+                    onClick={handleChartSubtypesClick}
                   >
-                    Subtypes
+                    {selectedChartSubtypes}
                   </Button>
                 </Box>
               </Box>
@@ -1191,8 +1308,9 @@ const GisaidOverview: React.FC = () => {
                       px: 2,
                       py: 0.5
                     }}
+                    onClick={handleMapTop5Click}
                   >
-                    Top 5
+                    {selectedMapTop5}
                   </Button>
                   <Button
                     variant="outlined"
@@ -1207,8 +1325,9 @@ const GisaidOverview: React.FC = () => {
                       px: 2,
                       py: 0.5
                     }}
+                    onClick={handleMapSubtypesClick}
                   >
-                    Subtypes
+                    {selectedMapSubtypes}
                   </Button>
                 </Box>
               </Box>
@@ -1268,6 +1387,92 @@ const GisaidOverview: React.FC = () => {
           </Paper>
         </Box>
       </Container>
+
+      {/* Date Range Filter Menu */}
+      <Menu
+        anchorEl={dateRangeAnchor}
+        open={Boolean(dateRangeAnchor)}
+        onClose={handleDateRangeClose}
+      >
+        <MenuItem onClick={() => handleDateRangeSelect('Last 7 Days')}>Last 7 Days</MenuItem>
+        <MenuItem onClick={() => handleDateRangeSelect('Last 30 Days')}>Last 30 Days</MenuItem>
+        <MenuItem onClick={() => handleDateRangeSelect('Last 90 Days')}>Last 90 Days</MenuItem>
+        <MenuItem onClick={() => handleDateRangeSelect('Last Year')}>Last Year</MenuItem>
+      </Menu>
+
+      {/* Region Filter Menu */}
+      <Menu
+        anchorEl={regionAnchor}
+        open={Boolean(regionAnchor)}
+        onClose={handleRegionClose}
+      >
+        <MenuItem onClick={() => handleRegionSelect('All Regions')}>All Regions</MenuItem>
+        <MenuItem onClick={() => handleRegionSelect('North America')}>North America</MenuItem>
+        <MenuItem onClick={() => handleRegionSelect('Europe')}>Europe</MenuItem>
+        <MenuItem onClick={() => handleRegionSelect('Asia')}>Asia</MenuItem>
+        <MenuItem onClick={() => handleRegionSelect('Africa')}>Africa</MenuItem>
+        <MenuItem onClick={() => handleRegionSelect('Oceania')}>Oceania</MenuItem>
+      </Menu>
+
+      {/* Impact Filters Menu */}
+      <Menu
+        anchorEl={impactFiltersAnchor}
+        open={Boolean(impactFiltersAnchor)}
+        onClose={handleImpactFiltersClose}
+      >
+        <MenuItem onClick={() => handleImpactFilterSelect('All Impacts')}>All Impacts</MenuItem>
+        <MenuItem onClick={() => handleImpactFilterSelect('Growth Rate')}>Growth Rate</MenuItem>
+        <MenuItem onClick={() => handleImpactFilterSelect('Spike Mutation')}>Spike Mutation</MenuItem>
+        <MenuItem onClick={() => handleImpactFilterSelect('New Variants')}>New Variants</MenuItem>
+      </Menu>
+
+      {/* Chart Top 5 Filter Menu */}
+      <Menu
+        anchorEl={chartTop5Anchor}
+        open={Boolean(chartTop5Anchor)}
+        onClose={handleChartTop5Close}
+      >
+        <MenuItem onClick={() => handleChartTop5Select('Top 5 by Growth Rate')}>Top 5 by Growth Rate</MenuItem>
+        <MenuItem onClick={() => handleChartTop5Select('Top 5 by Spike Mutation')}>Top 5 by Spike Mutation</MenuItem>
+        <MenuItem onClick={() => handleChartTop5Select('Top 5 by New Variants')}>Top 5 by New Variants</MenuItem>
+      </Menu>
+
+      {/* Chart Subtypes Filter Menu */}
+      <Menu
+        anchorEl={chartSubtypesAnchor}
+        open={Boolean(chartSubtypesAnchor)}
+        onClose={handleChartSubtypesClose}
+      >
+        <MenuItem onClick={() => handleChartSubtypesSelect('All Subtypes')}>All Subtypes</MenuItem>
+        <MenuItem onClick={() => handleChartSubtypesSelect('H1N1')}>H1N1</MenuItem>
+        <MenuItem onClick={() => handleChartSubtypesSelect('H3N2')}>H3N2</MenuItem>
+        <MenuItem onClick={() => handleChartSubtypesSelect('B/Victoria')}>B/Victoria</MenuItem>
+        <MenuItem onClick={() => handleChartSubtypesSelect('B/Yamagata')}>B/Yamagata</MenuItem>
+      </Menu>
+
+      {/* Map Top 5 Filter Menu */}
+      <Menu
+        anchorEl={mapTop5Anchor}
+        open={Boolean(mapTop5Anchor)}
+        onClose={handleMapTop5Close}
+      >
+        <MenuItem onClick={() => handleMapTop5Select('Top 5 by Growth Rate')}>Top 5 by Growth Rate</MenuItem>
+        <MenuItem onClick={() => handleMapTop5Select('Top 5 by Spike Mutation')}>Top 5 by Spike Mutation</MenuItem>
+        <MenuItem onClick={() => handleMapTop5Select('Top 5 by New Variants')}>Top 5 by New Variants</MenuItem>
+      </Menu>
+
+      {/* Map Subtypes Filter Menu */}
+      <Menu
+        anchorEl={mapSubtypesAnchor}
+        open={Boolean(mapSubtypesAnchor)}
+        onClose={handleMapSubtypesClose}
+      >
+        <MenuItem onClick={() => handleMapSubtypesSelect('All Subtypes')}>All Subtypes</MenuItem>
+        <MenuItem onClick={() => handleMapSubtypesSelect('H1N1')}>H1N1</MenuItem>
+        <MenuItem onClick={() => handleMapSubtypesSelect('H3N2')}>H3N2</MenuItem>
+        <MenuItem onClick={() => handleMapSubtypesSelect('B/Victoria')}>B/Victoria</MenuItem>
+        <MenuItem onClick={() => handleMapSubtypesSelect('B/Yamagata')}>B/Yamagata</MenuItem>
+      </Menu>
     </Box>
   );
 };
