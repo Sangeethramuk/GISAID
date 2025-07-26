@@ -70,61 +70,89 @@ const GisaidOverview: React.FC = () => {
                 alignItems: 'center',
                 gap: 1.5
               }}>
-                {/* Logo Icon with DNA Helix */}
+                {/* Logo Image */}
                 <Box sx={{
-                  width: 36,
-                  height: 36,
-                  bgcolor: '#2b7fff',
-                  borderRadius: 1.5,
+                  width: 40,
+                  height: 40,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: 'white',
-                  fontWeight: 'bold',
-                  fontSize: 18,
-                  position: 'relative',
+                  borderRadius: 1,
                   overflow: 'hidden'
                 }}>
-                  {/* DNA Helix Representation */}
+                  <img 
+                    src="/images/gisaid-logo.png" 
+                    alt="GISAID Logo"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'contain'
+                    }}
+                    onError={(e) => {
+                      // Fallback to text logo if image fails to load
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  
+                  {/* Fallback Logo (current design) */}
                   <Box sx={{
-                    position: 'relative',
-                    width: 16,
-                    height: 16,
-                    display: 'flex',
+                    width: 36,
+                    height: 36,
+                    bgcolor: '#2b7fff',
+                    borderRadius: 1.5,
+                    display: 'none', // Hidden by default, shows if image fails
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    fontSize: 18,
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}>
+                    {/* DNA Helix Representation */}
                     <Box sx={{
-                      position: 'absolute',
-                      width: 2,
-                      height: 12,
-                      bgcolor: 'white',
-                      borderRadius: 1,
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      '&::before': {
-                        content: '""',
+                      position: 'relative',
+                      width: 16,
+                      height: 16,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <Box sx={{
                         position: 'absolute',
-                        width: 8,
-                        height: 2,
+                        width: 2,
+                        height: 12,
                         bgcolor: 'white',
                         borderRadius: 1,
-                        top: 2,
-                        left: -3,
-                        transform: 'rotate(45deg)'
-                      },
-                      '&::after': {
-                        content: '""',
-                        position: 'absolute',
-                        width: 8,
-                        height: 2,
-                        bgcolor: 'white',
-                        borderRadius: 1,
-                        bottom: 2,
-                        right: -3,
-                        transform: 'rotate(-45deg)'
-                      }
-                    }} />
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        '&::before': {
+                          content: '""',
+                          position: 'absolute',
+                          width: 8,
+                          height: 2,
+                          bgcolor: 'white',
+                          borderRadius: 1,
+                          top: 2,
+                          left: -3,
+                          transform: 'rotate(45deg)'
+                        },
+                        '&::after': {
+                          content: '""',
+                          position: 'absolute',
+                          width: 8,
+                          height: 2,
+                          bgcolor: 'white',
+                          borderRadius: 1,
+                          bottom: 2,
+                          right: -3,
+                          transform: 'rotate(-45deg)'
+                        }
+                      }} />
+                    </Box>
                   </Box>
                 </Box>
                 
